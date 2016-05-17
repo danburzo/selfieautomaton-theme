@@ -1,0 +1,159 @@
+body {
+	font-family: 'Soleil', 'Helvetica', 'Arial', sans-serif;
+	max-width: 60em;
+	padding: 0 2em;
+	margin: 0 auto;
+	line-height: 1.5;
+	color: #222;
+	font-weight: 400;
+}
+
+a {
+	color: inherit;
+	/*text-decoration: none;*/
+}
+
+header {
+	padding: 2.5em 0;
+	border-bottom: 1px solid #ddd;
+	position: relative;
+}
+
+header a {
+	color: inherit;
+	text-decoration: none;
+}
+
+header nav ul {
+	padding: 0;
+	margin: 0;
+}
+
+header nav li ul {
+	/*display: none;*/
+/*	position: absolute;
+	bottom: 1em;
+	left: 0;*/
+}
+
+/*header nav .current-menu-item > a,
+header nav .current-menu-ancestor > a {
+	background: #222;
+	color: #fff;
+}
+
+header nav .current-menu-ancestor ul,
+header nav .current-menu-item ul {
+	display: block;
+}*/
+
+header nav {
+	text-transform: lowercase;
+	/*font-variant: small-caps;*/
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	/*font-size: 0.8em;*/
+	letter-spacing: 0.08em;
+}
+
+header nav li {
+	display: inline-block;
+	margin-right: 2em;
+}
+
+.masthead {
+	margin-bottom: 1em;
+}
+
+.masthead h1 {
+	text-transform: lowercase;
+	font-variant-caps: small-caps;
+	-webkit-font-feature-settings: "smcp";
+	font-feature-settings: "smcp";
+	letter-spacing: 0.1em;
+	width: 9em;
+	display: inline-block;
+	/*font-size: 1.6em;*/
+	font-size: 1.8em;
+	line-height: 1.2;
+}
+
+.masthead p {
+	display: inline-block;
+	font-size: 0.8em;
+}
+
+.biennale-logo {
+	position: absolute;
+	top: 3em;
+	right: 0;
+	height: 9em;
+}
+
+.main-section {
+	padding: 2.5em 0;
+}
+
+.breadcrumbs {
+	color: #999;
+	font-size: 0.8em;
+}
+
+article {
+	max-width: 40em;
+}
+
+.article-info {
+	margin: 2em 0;
+}
+
+.article-info h1 {
+	margin: 0;
+}
+
+.article-info a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.article-byline {
+	font-size: 0.8em;
+	color: #999;
+	margin: 0.5em 0;
+}
+
+figure {
+	margin: 0;
+}
+
+figure img {
+	max-width: 100%;
+	height: auto !important;
+}
+
+figcaption {
+	font-size: 0.8em;
+	color: #999;
+	margin: 0.5em 0;
+}
+
+article figure {
+	margin: 2em 0;
+}
+
+
+.image-placeholder {
+	background: #ddd;
+	height: 20em;
+}
+
+
+footer {
+	padding: 2.5em 0;
+	border-top: 1px solid #ddd;
+}
+
+footer a {
+	color: inherit;
+	text-decoration: none;
+}
