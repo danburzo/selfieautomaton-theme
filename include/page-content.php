@@ -16,7 +16,7 @@
 			<?php the_content() ?>
 		</div>
 	</article>
-	<nav class='secondary-nav'>
+<!-- 	<nav class='secondary-nav'>
 		<?php
 		$children = wp_list_pages( 'title_li=&child_of='.$post->ID.'&echo=0&depth=1' );
 		if ( !$post->post_parent && $children) : ?>
@@ -24,6 +24,6 @@
 		        <?php echo $children; ?>
 		    </ul>
 		<?php endif; ?>
-	</nav>
+	</nav> -->
 </div>
 
