@@ -19,14 +19,42 @@ header {
 	position: relative;
 }
 
-header a {
+header a, nav a {
 	color: inherit;
 	text-decoration: none;
 }
 
-header nav ul {
+nav ul {
 	padding: 0;
 	margin: 0;
+	list-style: none;
+}
+
+header nav ul {
+	display: inline-block;
+}
+
+.language-switcher {
+	margin-left: 2em;
+	font-size: 0.8em;
+}
+
+header .language-switcher li {
+	margin-right: 0.33em;
+}
+
+header .language-switcher li:before {
+	content: ' / ';
+	color: #aaa;
+}
+
+header .language-switcher li:first-child:before {
+	content: '';
+}
+
+
+.current-language {
+	color: #de232a;
 }
 
 header nav li ul {
@@ -47,7 +75,7 @@ header nav .current-menu-item ul {
 	display: block;
 }*/
 
-header nav {
+nav {
 	text-transform: lowercase;
 	/*font-variant: small-caps;*/
 	-webkit-font-feature-settings: "smcp";
@@ -94,6 +122,14 @@ header nav li {
 	padding: 2.5em 0;
 }
 
+.main-section:after {
+	content: '.';
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+}
+
 .breadcrumbs {
 	color: #999;
 	font-size: 0.8em;
@@ -101,13 +137,19 @@ header nav li {
 
 article {
 	max-width: 40em;
+	float: left;
 }
 
 .article-info {
-	margin: 2em 0;
+	margin: 0 0 2em;
 }
 
 .article-info h1 {
+	margin: 0;
+}
+
+.article-info h2 {
+	font-weight: inherit;
 	margin: 0;
 }
 
@@ -156,4 +198,32 @@ footer {
 footer a {
 	color: inherit;
 	text-decoration: none;
+}
+
+.static-image {
+	display: inline-block;
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.static-image img {
+	max-height: 6em;
+	max-width: 8em;
+}
+
+.static-image + br {
+	display: none;
+}
+
+/* Secondary navigation */
+
+.secondary-nav {
+	float: right;
+	width: 18em;
+}
+
+
+/* Language switcher */
+.menu_item_wpglobus_menu_switch .sub-menu {
+	position: absolute;
 }

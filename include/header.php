@@ -6,9 +6,11 @@
 	<nav>
 		<?php 
 			wp_nav_menu( 
-				array( 'menu' => 'main-menu', 'depth' => 0 ) 
+				array( 'menu' => 'main-menu', 'container' => '', 'depth' => 1 ) 
 			) 
 		?>
+		<?php the_language_switcher() ?>
 	</nav>
 	<img src='<?php bloginfo('template_directory');?>/img/logos/biennale.jpg' alt='Venice Biennale Logo' class='biennale-logo'/>
 </header>
+
