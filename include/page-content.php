@@ -1,8 +1,12 @@
 <div class='main-section'>
-	<!-- <figure class='hero'>
-		<div class='image-placeholder'></div>
-		<figcaption>Ana Botezatu</figcaption>
-	</figure> -->
+	<?php if (get_post_meta(get_the_ID(), 'hero-image')) { ?>
+	<figure class='hero'>
+		<img src='<?php bloginfo('template_directory');?>/img/hero-images/<?php echo get_post_meta(get_the_ID(), 'hero-image', true)?>'/>
+		<?php if (get_post_meta(get_the_ID(), 'hero-caption')) { ?>
+		<figcaption><?php echo apply_filters('the_title', get_post_meta(get_the_ID(), 'hero-caption', true))?></figcaption>
+		<?php } ?>
+	</figure>
+	<?php } ?>
 
 	<?php the_post() ?>
 	<article>
@@ -16,7 +20,7 @@
 			<?php the_content() ?>
 		</div>
 	</article>
-<!-- 	<nav class='secondary-nav'>
+	<nav class='secondary-nav'>
 		<?php
 		$children = wp_list_pages( 'title_li=&child_of='.$post->ID.'&echo=0&depth=1' );
 		if ( !$post->post_parent && $children) : ?>
@@ -24,6 +28,6 @@
 		        <?php echo $children; ?>
 		    </ul>
 		<?php endif; ?>
-	</nav> -->
+	</nav>
 </div>
 

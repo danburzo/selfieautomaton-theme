@@ -42,7 +42,7 @@ header a, nav a {
 	text-decoration: none;
 }
 
-nav a:hover {
+header a:hover, nav a:hover {
 	color: #de232a;
 }
 
@@ -91,12 +91,12 @@ header .language-switcher li:first-child:before {
 
 header nav .sub-menu {
 	opacity: 0;
-	transition: transform 0.15s 0.2s, opacity 0.15s 0.2s, visibility 0s 0.2s;
+	transition: transform 0.2s 0.2s, opacity 0.15s 0.2s, visibility 0s 0.2s, background 0.2s 0.2s;
 	transition-timing-function: ease-out;
-	transform: translate(0, 2em);
+	transform: translate(0, -1em);
 	visibility: hidden;
 	position: absolute;
-	background: #fff;
+	background: transparent;
 	top: 100%;
 	left: -0.5em;
 	padding: 0.5em;
@@ -107,8 +107,9 @@ header nav .sub-menu {
 header nav li:hover .sub-menu {
 	opacity: 1;
 	transform: translate(0, 0);
-	transition: all 0.15s 0s;
+	transition: all 0.15s 0.15s;
 	visibility: visible;
+	background: #fff;
 }
 
 header nav .sub-menu li {
@@ -241,7 +242,11 @@ article {
 }
 
 figure {
-	margin: 0;
+	margin: 1.5em 0;
+}
+
+figure.hero {
+	margin-top: 0;
 }
 
 figure img {
@@ -271,8 +276,30 @@ article figure {
 
 
 footer {
-	padding: 2.5em 0;
+	padding: 3.75em 0;
+	font-size: 0.8em;
 	border-top: 1px solid #ddd;
+	color: #777;
+}
+
+.social-media {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	margin-left: 1.5em;
+	color: #222;
+}
+
+.social-media li {
+	display: inline-block;
+}
+
+.social-media li:after {
+	content: ' · ';
+}
+
+.social-media li:last-child:after {
+	content: '';
 }
 
 footer a {
@@ -297,17 +324,64 @@ footer a {
 	display: none;
 }
 
+.article-content .full-bleed {
+	width: 60em;
+	max-width: 9999px;
+}
+
 /* Secondary navigation */
 
 .secondary-nav {
 	float: right;
-	width: 18em;
+	width: 9em;
+	/*width: 14.7em;*/
+	margin-top: 5em;
+	padding-left: 1.2em;
+	border-left: 1px solid #ddd;
+}
+
+.secondary-nav ul {
+	font-size: 1.1em;
+	line-height: 1.36;
+}
+
+.secondary-nav li {
+	margin: 0 0 1.36em;
 }
 
 
 /* Language switcher */
 .menu_item_wpglobus_menu_switch .sub-menu {
 	position: absolute;
+}
+
+@media (min-width: 45em) {
+
+	.masthead h1 {
+		transition: all 0.15s;
+		position: relative;
+		z-index: 10;
+	}
+
+	.masthead p {
+		transition: all 0.15s;
+		position: absolute;
+		top: 0;
+	}
+
+	.masthead:hover {
+		color: #de232a;
+	}
+
+	.masthead:hover h1 {
+		letter-spacing: 2em;
+		text-indent: 1.5em;
+	}
+
+	.masthead:hover p {
+		line-height: 3;
+		top: -2.25em;
+	}
 }
 
 
