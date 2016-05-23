@@ -17,8 +17,17 @@
 
 		$output = '<figure class="static-image ' . $atts['klass'] . '">';
 
+		if ($atts['link'] != '') {
+			$output .= '<a href="' . $atts['link'] . '" target="_blank">'; 
+		}
+
 		$output .= '<img src="' . get_bloginfo('template_directory') . '/' . $atts['path'] . '" alt="' . $content . '" />';
 		$output .= '<figcaption>' . $content . '</figcaption>';
+
+		if ($atts['link'] != '') {
+			$output .= '</a>';
+		}
+
 		$output .= '</figure>';
 		return $output;
 
@@ -36,6 +45,19 @@
 				} else {
 					echo "<li><a href='".WPGlobus_Utils::localize_current_url($lang)."'>{$lang}</a></li>";
 				}
+			}
+			echo '</ul>';
+		}
+	}
+
+	function the_breadcrumb() {
+		if (!is_home()) {
+			$parents = array_reverse(get_post_ancestors( get_the_ID() ));
+			echo '<ul>';
+			foreach ($parents as $p) {
+				echo '<li>';
+				echo '<a href="' . get_permalink($p) . '">' . get_the_title($p) . '</a>';
+				echo '</li>';
 			}
 			echo '</ul>';
 		}

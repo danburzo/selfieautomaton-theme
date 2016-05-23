@@ -13,5 +13,8 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/selfieautomaton.css" rel="stylesheet" type='text/css' media='all'>
 
+	<!-- Scripts -->
+	<script src="<?php bloginfo('template_directory');?>/js/selfieautomaton.js" rel="stylesheet"></script>
+
 	<?php wp_head();?>
 </head>
