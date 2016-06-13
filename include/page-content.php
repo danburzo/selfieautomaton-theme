@@ -15,15 +15,16 @@
 	<?php } ?>
 
 	<?php the_post() ?>
-	<nav class='secondary-nav'>
 		<?php
 		$children = wp_list_pages( 'title_li=&child_of='.$post->ID.'&echo=0&depth=1' );
 		if ( !$post->post_parent && $children) : ?>
+
+			<nav class='secondary-nav'>
 		    <ul>
 		        <?php echo $children; ?>
 		    </ul>
+			</nav>
 		<?php endif; ?>
-	</nav>
 	<article class="<?php if (get_post_meta(get_the_ID(), 'article-layout')) { echo 'layout-' . get_post_meta(get_the_ID(), 'article-layout', true); } ?>">
 		<div class='article-info'>
 			<nav class='article-breadcrumbs'><?php the_breadcrumb() ?></nav>

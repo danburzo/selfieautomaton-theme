@@ -106,6 +106,38 @@
 			this.setSlideshowMode(!this.slideshow_mode);
 			e.preventDefault();
 		}.bind(this));
+
+		var initX = null, initY = null;
+		this.galleryEl.addEventListener('touchstart', function(e) {
+			var touches = e.changedTouches;
+			if (touches.length) {
+				initX = touches[0].clientX;
+				initY = touches[0].clientY;
+			}
+		}.bind(this));
+
+		var SWIPE_THRESHOLD = 20;
+		var VERTICAL_THRESHOLD = 100;
+
+		this.galleryEl.addEventListener('touchend', function(e) {
+			if (initX !== null) {
+				var touches = e.changedTouches;
+				if (touches.length) {
+					var finalX = touches[0].clientX;
+					var finalY = touches[0].clientY;
+					var deltaX = initX - finalX;
+					var deltaY = initY - finalY;
+					if (Math.abs(deltaX) > SWIPE_THRESHOLD && Math.abs(deltaY) < VERTICAL_THRESHOLD) {
+						if (deltaX > 0) {
+							this.next();
+						} else {
+							this.prev();
+						}
+					}
+				}
+			}
+			initX = null;
+		}.bind(this));
 	};
 
 	Slideshow.prototype.prev = function() {
